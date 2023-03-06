@@ -1,4 +1,3 @@
-import LineGradient from "../components/LineGradient";
 import useMediaQuery from "../hooks/useMediaQuery";
 import { motion } from "framer-motion";
 
@@ -9,7 +8,7 @@ const MySkills = () => {
       {/* HEADER AND IMAGE SECTION */}
       <div className="md:flex md:justify-between md:gap-16 mt-32">
         <motion.div
-          className="md:w-1/3"
+          className="md:w-2/3"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
@@ -19,13 +18,50 @@ const MySkills = () => {
             visible: { opacity: 1, x: 0 },
           }}
         >
-          <p className="font-playfair font-semibold text-4xl mb-5">
-            MY <span className="text-red">SKILLS</span>
+          <p className="font-playfair font-semibold text-4xl mb-5 text-[#dcfd93]">
+            MY <span className="text-[#c0b3f2]">SKILLS</span>
           </p>
-          <LineGradient width="w-1/3" />
+
           <p className="mt-10 mb-7">
-            Aliquam, amet dui feugiat facilisi dui. Aliquam aliquet integer ut
-            fames odio in at.
+            I'm super! enjoy with
+            <br />
+            <a
+              href="https://reactjs.org/"
+              className="underline text-[#dcfd93] hover:text-[#c0b3f2] font-bold pr-2"
+            >
+              React.js
+            </a>
+            |
+            <a
+              href="https://tailwindcss.com/"
+              className="underline text-[#c0b3f2] hover:text-[#dcfd93] font-bold px-2"
+            >
+              TailWind Css
+            </a>
+            |
+            <a
+              href="https://www.typescriptlang.org/"
+              className="underline text-[#dcfd93] hover:text-[#c0b3f2] font-bold px-2"
+            >
+              Typscript
+            </a>
+            |
+            <a
+              href="https://nodejs.org/en/"
+              className="underline text-[#c0b3f2] hover:text-[#dcfd93] font-bold px-2"
+            >
+              Node.js
+            </a>
+            |
+            <a
+              href="https://expressjs.com/"
+              className="underline text-[#dcfd93] hover:text-[#c0b3f2] font-bold px-2"
+            >
+              {" "}
+              Express.js
+            </a>{" "}
+            <br />
+            and I'm working on my mini project for design and data science
           </p>
         </motion.div>
 
@@ -35,14 +71,10 @@ const MySkills = () => {
               className="relative z-0 ml-20 before:absolute before:-top-10 before:-left-10
               before:w-full before:h-full before:border-2 before:border-blue before:z-[-1]"
             >
-              <img
-                alt="skills"
-                className="z-10"
-                src="assets/skills-image.png"
-              />
+              <img alt="skills" className="z-10" src="assets/tech-stack.gif" />
             </div>
           ) : (
-            <img alt="skills" className="z-10" src="assets/skills-image.png" />
+            <img alt="skills" className="z-10" src="assets/tech-stack.gif" />
           )}
         </div>
       </div>
@@ -64,17 +96,20 @@ const MySkills = () => {
           <div className="relative h-32">
             <div className="z-10">
               <p className="font-playfair font-semibold text-5xl">01</p>
-              <p className="font-playfair font-semibold text-3xl mt-3">
-                Experience
+              <p className="font-sansopen font-semibold text-3xl mt-3">
+                Educational
+              </p>
+              <div className={`h-0.5 w-full bg-gradient-rainblue`} />
+            </div>
+          </div>
+          <div className="mt-5 flex flex-col">
+            <div>
+              <strong>Chiang Mai University</strong>
+              <p className="pt-1">
+                Bachelor of Computer Engineering, Faculty of Engineering 2017
               </p>
             </div>
-            <div className="w-1/2 md:w-3/4 h-32 bg-blue absolute right-0 top-0 z-[-1]" />
           </div>
-          <p className="mt-5">
-            A auctor pharetra hendrerit mattis amet etiam interdum platea. Est
-            morbi porttitor scelerisque fermentum, sagittis non egestas. Amet
-            odio sit sagittis,
-          </p>
         </motion.div>
 
         {/* INNOVATIVE */}
@@ -96,14 +131,19 @@ const MySkills = () => {
                 Innovative
               </p>
             </div>
-            <div className="w-1/2 md:w-3/4 h-32 bg-red absolute right-0 top-0 z-[-1]" />
+            <div className={`h-0.5 w-full bg-gradient-rainblue`} />
           </div>
-          <p className="mt-5">
-            Urna, eget pulvinar dolor cursus volutpat dictum odio. Nec ultricies
-            amet in in neque nibh tortor. Libero sed pretium justo nulla blandit
-            nulla amet habitant iaculis. Iaculis in congue vitae sollicitudin
-            faucibus a
-          </p>
+          <div className="py-3 flex-col">
+              <strong>International Publication</strong>
+              <p className="pt-1">
+                PURBA 2017 The 6th International Workshop on Pervasive Urban
+                Applications, In conjunction with ACM UbiComp 2017, 11 September
+                2017, Maui, Hawaii, USA
+              </p>
+              <a className="underline text-[#dcfd93]" href="https://dl.acm.org/doi/10.1145/3123024.3124413">
+              Wi-Crowd: sensing and visualizing 
+              </a>
+            </div>
         </motion.div>
         {/* IMAGINATIVE */}
         <motion.div
@@ -124,13 +164,10 @@ const MySkills = () => {
                 Imaginative
               </p>
             </div>
-            <div className="w-1/2 md:w-3/4 h-32 bg-yellow absolute right-0 top-0 z-[-1]" />
+            <div className={`h-0.5 w-full bg-gradient-rainblue`} />
           </div>
           <p className="mt-5">
-            Accumsan eu fringilla nisi, eget. Vitae, eget ut id proin arcu in
-            curabitur. Lectus libero, egestas enim aliquam quis felis amet.
-            Sagittis, amet netus fringilla netus lobortis odio sed platea.
-            Bibendum.
+            I love to be Frontend but for my passion is be Developer who is have many experience for finding solution and use Data for analysis/visualized solved
           </p>
         </motion.div>
       </div>

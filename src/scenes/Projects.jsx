@@ -15,21 +15,20 @@ const projectVariant = {
   visible: { opacity: 1, scale: 1 },
 };
 
-const Project = ({ title }) => {
+const Project = ({ title ,gitLink}) => {
   const overlayStyles = `absolute h-full w-full opacity-0 hover:opacity-90 transition duration-500
     bg-grey z-30 flex flex-col justify-center items-center text-center p-16 text-deep-blue`;
   const projectTitle = title.split(" ").join("-").toLowerCase();
 
   return (
     <motion.div variants={projectVariant} className="relative">
+      <div >
       <div className={overlayStyles}>
         <p className="text-2xl font-playfair">{title}</p>
-        <p className="mt-7">
-          Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla
-          porttitor accumsan tincidunt.
-        </p>
+       {gitLink && <a className="text-2xl font-opensans underline text-bold text-purple mt-2" href={gitLink}  target="_blank"> SourceCode</a>} 
       </div>
-      <img src={`../assets/${projectTitle}.jpeg`} alt={projectTitle} />
+      <img src={`../assets/${projectTitle}.png`} alt={projectTitle} />
+      </div>
     </motion.div>
   );
 };
@@ -58,9 +57,7 @@ const Projects = () => {
           </div>
         </div>
         <p className="mt-10 mb-10">
-          Aliquam, amet dui feugiat facilisi dui. Aliquam aliquet integer ut
-          fames odio in at. At magna ornare dictum lectus. Purus massa morbi
-          purus nec eget eleifend ut elit.
+          I do my project on my free time to catch up new tech stack
         </p>
       </motion.div>
 
@@ -74,29 +71,18 @@ const Projects = () => {
           viewport={{ once: true, amount: 0.2 }}
         >
           {/* ROW 1 */}
-          <div
-            className="flex justify-center text-center items-center p-10 bg-red
-              max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"
-          >
-            BEAUTIFUL USER INTERFACES
-          </div>
-          <Project title="Project 1" />
+         
+          <Project title="Project 1" gitLink= "https://dl.acm.org/doi/10.1145/3123024.3124413" />
           <Project title="Project 2" />
+          <Project title="Project 3" gitLink= "https://github.com/kiraso/server-scraping"/>
 
           {/* ROW 2 */}
-          <Project title="Project 3" />
-          <Project title="Project 4" />
-          <Project title="Project 5" />
+        
+          <Project title="Project 4" gitLink= "https://github.com/kiraso/FlutterEShopApp"/>
+          <Project title="Project 5" gitLink= "https://github.com/kiraso/movieweb"/>
+          <Project title="Project 6" gitLink= "https://github.com/kiraso/Covid-Tracker_BI"/>
 
-          {/* ROW 3 */}
-          <Project title="Project 6" />
-          <Project title="Project 7" />
-          <div
-            className="flex justify-center text-center items-center p-10 bg-blue
-              max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"
-          >
-            SMOOTH USER EXPERIENCE
-          </div>
+          
         </motion.div>
       </div>
     </section>
